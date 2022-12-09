@@ -1,0 +1,203 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01XS5OGC116ZX0XDyNZ4tteHrLGKucK8xwB",
+    "name": "HTTP Basic",
+    "title": "HTTP Basic",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "HTTP Basic",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01XS5OGNA3UHP0jeORHIDxHT5JuirlHlp6W",
+        "name": "HTTP Request Invalid Target",
+        "title": "HTTP Request Invalid Target",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "display_name": "HTTP Request Invalid Target",
+          "method": "GET",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "relative_url": "",
+            "target_id": "definition_target_01XS5OFSYCGHX2VIRad0MIGfVoftG01Fhkl"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XS5OGJHUVLV2Ft4xvhHGSI5NEHLmNHupW",
+        "name": "HTTP Request with Proxy",
+        "title": "HTTP Request with Proxy",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "display_name": "HTTP Request with Proxy",
+          "method": "GET",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "relative_url": "",
+            "target_id": "definition_target_01XS5OFOKM6VW3R760u7xFjFQzAVATPTX7o"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01XS5OGG3QY7U0ID2tiQTLWInxP4tB1WPby",
+        "name": "HTTP Request no Proxy",
+        "title": "HTTP Request no Proxy",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": true,
+          "display_name": "HTTP Request no Proxy",
+          "method": "GET",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "relative_url": "",
+            "target_id": "definition_target_01XS5OFJFI9JE2OYunoNKL2NHmkhg3r1QGC"
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01XS5OFJFI9JE2OYunoNKL2NHmkhg3r1QGC": {
+      "unique_name": "definition_target_01XS5OFJFI9JE2OYunoNKL2NHmkhg3r1QGC",
+      "name": "HTTP Basic Auth - 2022-06-13T15:37:09.942332599Z",
+      "title": "HTTP Basic Auth - 2022-06-13T15:37:09.942332599Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01XS5OF4S19355wVTW2CgikNnHuC3zzfsRh",
+        "disable_certificate_validation": true,
+        "display_name": "HTTP Basic Auth - 2022-06-13T15:37:09.942332599Z",
+        "host": "httpbin.org",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "basic-auth/foo/bar",
+        "port": 80,
+        "protocol": "http"
+      }
+    },
+    "definition_target_01XS5OFOKM6VW3R760u7xFjFQzAVATPTX7o": {
+      "unique_name": "definition_target_01XS5OFOKM6VW3R760u7xFjFQzAVATPTX7o",
+      "name": "HTTP Basic Auth [proxy] - 2022-06-13T15:37:09.942332599Z",
+      "title": "HTTP Basic Auth [proxy] - 2022-06-13T15:37:09.942332599Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01XS5OF4S19355wVTW2CgikNnHuC3zzfsRh",
+        "disable_certificate_validation": true,
+        "display_name": "HTTP Basic Auth [proxy] - 2022-06-13T15:37:09.942332599Z",
+        "host": "httpbin.org",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "/basic-auth/foo/bar",
+        "port": 80,
+        "protocol": "http",
+        "proxy_password": "*****",
+        "proxy_url": "http://18.117.177.240:3128",
+        "proxy_username": "admin"
+      }
+    },
+    "definition_target_01XS5OFSYCGHX2VIRad0MIGfVoftG01Fhkl": {
+      "unique_name": "definition_target_01XS5OFSYCGHX2VIRad0MIGfVoftG01Fhkl",
+      "name": "HTTP Basic Auth[inv] - 2022-06-13T15:37:09.942332599Z",
+      "title": "HTTP Basic Auth[inv] - 2022-06-13T15:37:09.942332599Z",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01XS5OF8FGA892VjZLdJSjvnVylZddqNEls",
+        "disable_certificate_validation": true,
+        "display_name": "HTTP Basic Auth[inv]- 2022-06-13T15:37:09.942332599Z",
+        "host": "httpbin.org",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "/basic-auth/foo/bar",
+        "port": 80,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01XS5OF4S19355wVTW2CgikNnHuC3zzfsRh": {
+      "unique_name": "definition_runtime_user_01XS5OF4S19355wVTW2CgikNnHuC3zzfsRh",
+      "name": "Basic HTTP 2022-06-13T15:37:09.547017303Z",
+      "title": "Basic HTTP 2022-06-13T15:37:09.547017303Z",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "Basic",
+        "basic_password": "*****",
+        "basic_username": "foo",
+        "description": "This Basic HTTTP Accountkeys Created using HTTP type ",
+        "display_name": "Basic HTTP 2022-06-13T15:37:09.547017303Z"
+      }
+    },
+    "definition_runtime_user_01XS5OF8FGA892VjZLdJSjvnVylZddqNEls": {
+      "unique_name": "definition_runtime_user_01XS5OF8FGA892VjZLdJSjvnVylZddqNEls",
+      "name": "Basic HTTP Invalid 2022-06-13T15:37:09.547017303Z",
+      "title": "Basic HTTP Invalid  2022-06-13T15:37:09.547017303Z",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "Basic",
+        "basic_password": "*****",
+        "basic_username": "admin",
+        "description": "This Basic HTTTP Accountkeys Created using HTTP type ",
+        "display_name": "Basic HTTP Invalid 2022-06-13T15:37:09.547017303Z"
+      }
+    }
+  }
+}
