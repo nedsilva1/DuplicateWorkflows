@@ -1,0 +1,91 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0220O9OHCWS3A5RzYhf9vdpRYAJeXTpb5BB",
+    "name": "HTTPS Target1",
+    "title": "HTTPS Target1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "HTTPS Target1",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_0220O89BDQLQ12yMXMAYRyIUPVu8E7UNIrY",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0220OA3JSA9UU2EdjoKTMIYsDzrv4K51PSr",
+        "name": "HTTP Request",
+        "title": "HTTP Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "allow_headers_redirect": false,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "HTTP Request",
+          "method": "GET",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_0220O89BDQLQ12yMXMAYRyIUPVu8E7UNIrY": {
+      "unique_name": "definition_target_0220O89BDQLQ12yMXMAYRyIUPVu8E7UNIrY",
+      "name": "HTTPS Client Cert Dublicate",
+      "title": "HTTPS Client Cert Dublicate",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_0220O88PY5MEI3SQIFFW09RPprNBknwLW9j",
+        "disable_certificate_validation": true,
+        "display_name": "HTTPS Client Cert Dublicate",
+        "host": "3.141.5.34",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0220O88PY5MEI3SQIFFW09RPprNBknwLW9j": {
+      "unique_name": "definition_runtime_user_0220O88PY5MEI3SQIFFW09RPprNBknwLW9j",
+      "name": "HTTPS Client Auth Dublicate",
+      "title": "HTTPS Client Auth Dublicate",
+      "type": "runtime_user.web-service_client_certificate_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "crt": "-----BEGIN CERTIFICATE-----\nMIIDIDCCAggCCQDqrcnQ8FkXSTANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwJV\nUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVNvbWV3aGVyZTEQMA4GA1UECgwHU29t\nZW9uZTERMA8GA1UEAwwIRm9vYmFyQ0EwHhcNMjIwMzE4MTczMTE2WhcNMzIwMzE1\nMTczMTE2WjBRMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVNv\nbWV3aGVyZTEQMA4GA1UECgwHU29tZW9uZTEPMA0GA1UEAwwGRm9vYmFyMIIBIjAN\nBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArRyzQ7sGfZbiUzfzUss/c6tq0yAh\nyfwZrRCpGSEl8HbGc/teBr40jAhU/AISLNaywCWEtNyAP0Gj73Ys23V7mhno7fgY\noZ23sRvSyDJtEOHJ+8MgKu6tYUF2UwrR0DPX6qmkhbuRJJI1Aq3a9jeXX/0uQqc+\nF5nXTtpDa6n8m7wEGcF1H2Wwzo/pymWOCRj/boPVNVRnbazexGEslfv2s3HG77zt\n88YW4gXr28rucdxw7giBjYWAMehClMIWkiRjHnIPYQ15TmADbhqatkoLTQ996owZ\nbiycB29KnnYo1iwoRvlqWT0iDkyn0bolg4hC/fBKrmw5Vf9SsGXo5MU09wIDAQAB\nMA0GCSqGSIb3DQEBCwUAA4IBAQA31lOIyVd93iPdMdT+PuF8lNGkFfQjfZJObVIB\nyoZ0Ob9PCSvwC8zje4gwrvHKsoYq55wrY25uVN8V/X5Aj6Y3edmPUh1o9g+Riuqs\nB6xXiIcz0V8ZMDf9MIhdeiTnv54FViRb5ojsZa0Vz3f7rDsJsytfZ1/WDcmc3o4m\np3YnOGzwls8fzwityBJop4cbw1eTqabzubQM+H+c28u68/LqHKvAgb6CxOdVTK3y\niCbpVCCXqVdNPTPA8XXvIIOTl4wLP4XM9HIuS1+S1BGrknviE9JuTmBkkHgh1EI5\nzBUby3v9R/y3rnbZLfnAW+Agvuf1iD3A7efDHyDTLF/SEqUY\n-----END CERTIFICATE-----\n",
+        "display_name": "HTTPS Client Auth[inv]-2022-12-09T22:14:35.934439278Z",
+        "key": "-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: DES-EDE3-CBC,D809C4FD37AE2042\n\nyGNWkGZwlRXa3LMpS7yyT5fmA4hmp/qZo/tyb+sTHDlB5VIBo+dM+j1rp/WOYXoQ\nZHQUVyGwW3jL7La+iPTh8Dd20k3L6gGA1O+IKdU2dWk3J0xcaqpwNf7FXyH4OHBm\nj3sjykKW8/7JlSy7X6Bzll/OkkgqCAgd+Pl01O4M4qX+JCGQSLmlD98mhKOHb4Zn\nJs7VH7Kp9nMPe0WT6DcZTVPoSrqqG5gjeoaYADWDX2mygpVQzrHLHo+zEuN/PE1B\nIMLUJY/X3WaS3tzOwF+N8tPjAHnRpMA0WYdKbSQ7HcDJzGMLT4i9EU4d5ywfOn6T\n3xiquUzElgyMYXysgWRV6/dd1TnccbtS8m8ausKmXUjwizM6MAulbM9aLR96/ntP\nj2PALV+iivpfXRWziXB9eyCtSI2I3OHToyOXDgXiaZIBfR6UQ9XKuolUyBBTo0WN\nRT8+i3KTSIHiP80K4nPJA74HAt0PSme+EFvHAc8tql7KNAf3C86rU5DxbRXtg+MH\nQMmfcaTRU/J2ZwE0Xjw/0J/RUSHAv22RxKBdFdfJ73b9P4sX7bYmg7QPBRZN3aBJ\n4qU7b4dF++XxcAmsuEBQmUQnALqgyXeJDEIJRnnuEl42jbuILcuGadQmvgSXE9y+\nYdR4bI0yH49EUj92mwzf0LlOgOZHs1fo5L5ZIXWau4Z5RQ9rOt+LhXPMwggS+bVZ\nlOly18uCVZ4ejDoAOl6a/f4l+llzoWDe950clkoc2Rio6ETVggrVpFXoa3orr+6J\nQiDQhtubxgq0TAscLZ3dKJhL340T2+LJfb63WNHQdvDQfY9jrvv8lTfUZFWaeumJ\nYp5087PotqOH6tdcWn5KE+BiHdcaRI0clJv6owSm2b477y1FfVUkk5I+QkvZ0Elx\n5f4p9ftRVHCJYW2Urq+l6XTZx7i5IXNG+AlkVD+aeB94UV8Efixf9/tgrC0Q+EF9\n56ChY6ZB5seheSY7IFpgFNXRwYMrZMwuf0fqMhQ/vMeuR5htqtXh9MFosmYnx0z7\nI273w3lzJ12gaQDEC1dL8mlwBpTSeNAEknV/rI9dY7gyW9DYOICe5EnT4I5S0h1d\n14uLGrUMYKFd9bImeigfYkmUfWplwzjU/BnnkjzTLm08YAxvRECWwbS6S9GwozG2\nul2Fdq7Bd3XlpiQQnSInjLThv1VmDCe39tqt8Vo9EK/AG0a6/AMmFcDAsWbFGil8\nZKnQTmr9AwEsxsCWggsL1Uu1NLhxgevDDsHbD6c526PBUEKARA2Qh2J3q9923zJ8\noszlgJ9maSLBHxT9eJsMbfVAc6du22zS+L2HQbpEkKRWZafHfSUiZlzScFuvl74d\nEPwVvWkmD/6e6dmtIwBBL4LGxOHBU+hwfW+R/ei2WN0bniIHXfaDPSsX3ve0+mmx\nEnt7iJbFad8J5JDp4vvlJNeArhNYmKWTCaOzWMkd8sLMRWmIuyc9BLBDJkBkPODW\npxmZh98rAkG30aFN+ZCVhrHm13gU1flKwOllqg6p6h7ViCHdyySmyXU+IyXmU0lh\nhuoAdxAmOPxtao5xZeopAtxSRL5bDZzBIPpP1RL2JXrlpUhrKQOUZokVwAcROiUY\n-----END RSA PRIVATE KEY-----\n",
+        "passphrase": "testSSL12345"
+      }
+    }
+  }
+}
